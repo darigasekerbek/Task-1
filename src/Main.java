@@ -3,6 +3,7 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
@@ -18,6 +19,8 @@ public class Main {
         System.out.println("Factorial of " + n + " is " + fact);
         int fibon = findFibonacci(n);
         System.out.println("Fibonacci sequence " + fibon);
+        int pow = findPower(a,n);
+        System.out.println(a + " to the power " + n + " is "+ pow);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -60,6 +63,14 @@ public class Main {
             return n;}
         else {
             return findFibonacci(n-1)+findFibonacci(n-2);}
+    }
+    public static int findPower(int a, int n){ // a = 2, n = 10, 2^10=1024
+        if(n == 0)
+            return 1;
+        else if (n == 1)
+            return a;
+        else
+            return a * findPower(a, n-1);
     }
 }
 
