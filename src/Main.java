@@ -70,7 +70,7 @@ public class Main {
         else if (n == 1)
             return a;
         else
-            return a * findPower(a, n-1);
+            return a * findPower( a, n-1);
     }
 }
 
