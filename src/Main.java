@@ -12,7 +12,8 @@ public class Main {
         System.out.println("Minimum is " + min);
         double aver = findAverage(arr, n);
         System.out.println("Average is " + aver);
-
+        String res = findisPrime(n, 2);
+        System.out.println("The number is " + res);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -30,5 +31,19 @@ public class Main {
             double sum = findAverage(arr,n-1)*(n-1)+arr[n-1];
             return sum/n;
         }
+    public static String findisPrime (int n, int a) {
+        if (n<=1) {
+            return "Composite";}
+        else if (n==2) {
+            return "Prime";}
+        else if (n % a == 0){
+            return "Composite";}
+        else if (a * a > n){
+            return "Prime";}
+        else {
+            return findisPrime( n, a+1);
+        }
+
+    }
     }
 
