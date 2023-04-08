@@ -16,6 +16,8 @@ public class Main {
         System.out.println("The number is " + res);
         int fact = findFactorial(n);
         System.out.println("Factorial of " + n + " is " + fact);
+        int fibon = findFibonacci(n);
+        System.out.println("Fibonacci sequence " + fibon);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -52,6 +54,12 @@ public class Main {
             else {
                 return n * (findFactorial(n - 1));
             }
+    }
+    public static int findFibonacci(int n){
+        if (n <= 1){
+            return n;}
+        else {
+            return findFibonacci(n-1)+findFibonacci(n-2);}
     }
 }
 
