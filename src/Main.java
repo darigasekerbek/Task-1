@@ -14,6 +14,8 @@ public class Main {
         System.out.println("Average is " + aver);
         String res = findisPrime(n, 2);
         System.out.println("The number is " + res);
+        int fact = findFactorial(n);
+        System.out.println("Factorial of " + n + " is " + fact);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -43,7 +45,15 @@ public class Main {
         else {
             return findisPrime( n, a+1);
         }
+    }
+        public static int findFactorial(int n) {
+            if (n == 1) {
+                return 1; }
+            else {
+                return n * (findFactorial(n - 1));
+            }
+    }
+}
 
-    }
-    }
+
 
