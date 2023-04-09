@@ -3,7 +3,6 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
@@ -27,13 +26,17 @@ public class Main {
         System.out.println(rev + " reverse version of array");
         System.out.println("Write the text to check if it consists only of numbers");
         String s = sc.next();
-
         String dig = findisDigit(s);
         System.out.println("Does the str contain only num? " + dig);
-        System.out.println("Please write k - number");
+        System.out.println("Please write k - number, n >= k");
         int k = sc.nextInt();
         int formula = findBinomial(n,k);
         System.out.println("Binomial coefficient is " + formula);
+        System.out.println("Please write x and y - numbers");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int gcd = findGCD(x,y);
+        System.out.println("GCD is " + gcd);
 
     }
 
@@ -106,8 +109,13 @@ public class Main {
             return  findBinomial(n-1,k)+findBinomial(n-1,k-1);
         }
     }
-
+    public static int findGCD(int x,int y) {
+    if (y == 0) {
+        return x;}
+    else {
+        return findGCD(y,x % y);}
     }
+}
 
 
 
