@@ -3,7 +3,7 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
+
         int n = sc.nextInt();
         int[] arr = new int[n];
         for (int i = 0; i < n; i++) {
@@ -19,10 +19,15 @@ public class Main {
         System.out.println("Factorial of " + n + " is " + fact);
         int fibon = findFibonacci(n);
         System.out.println("Fibonacci sequence " + fibon);
+        int a = sc.nextInt();
         int pow = findPower(a,n);
         System.out.println(a + " to the power " + n + " is "+ pow);
         int rev = findReverse(n, arr);
         System.out.println(rev);
+        String s = sc.next();
+        String dig = findisDigit(s);
+        System.out.println("Does the str contain only num? " + dig);
+
     }
 
     public static int findMin(int[] arr, int n) {
@@ -81,7 +86,15 @@ public class Main {
            System.out.print(arr[n-1] + " " );
            return findReverse(n-1 , arr);}
     }
-}
+    public static String findisDigit(String s){
+        if (s.matches("[0-9]+")){
+            return "Yes";}
+        else {
+            return "No";}
+
+        }
+    }
+
 
 
 
