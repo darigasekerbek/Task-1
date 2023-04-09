@@ -21,6 +21,8 @@ public class Main {
         System.out.println("Fibonacci sequence " + fibon);
         int pow = findPower(a,n);
         System.out.println(a + " to the power " + n + " is "+ pow);
+        int rev = findReverse(n, arr);
+        System.out.println(rev);
     }
 
     public static int findMin(int[] arr, int n) {
@@ -71,6 +73,13 @@ public class Main {
             return a;
         else
             return a * findPower( a, n-1);
+    }
+    public static int findReverse(int n, int[] arr){
+       if (n == 1){
+           return arr[n-1];}
+       else {
+           System.out.print(arr[n-1] + " " );
+           return findReverse(n-1 , arr);}
     }
 }
 
