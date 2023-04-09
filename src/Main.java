@@ -19,14 +19,21 @@ public class Main {
         System.out.println("Factorial of " + n + " is " + fact);
         int fibon = findFibonacci(n);
         System.out.println("Fibonacci sequence " + fibon);
+        System.out.println("Write the number for which you want to find the degree");
         int a = sc.nextInt();
         int pow = findPower(a,n);
         System.out.println(a + " to the power " + n + " is "+ pow);
         int rev = findReverse(n, arr);
-        System.out.println(rev);
+        System.out.println(rev + " reverse version of array");
+        System.out.println("Write the text to check if it consists only of numbers");
         String s = sc.next();
+
         String dig = findisDigit(s);
         System.out.println("Does the str contain only num? " + dig);
+        System.out.println("Please write k - number");
+        int k = sc.nextInt();
+        int formula = findBinomial(n,k);
+        System.out.println("Binomial coefficient is " + formula);
 
     }
 
@@ -91,8 +98,15 @@ public class Main {
             return "Yes";}
         else {
             return "No";}
-
         }
+    public static int findBinomial(int n,int k){
+        if (k ==n || k==0){
+            return 1;}
+        else {
+            return  findBinomial(n-1,k)+findBinomial(n-1,k-1);
+        }
+    }
+
     }
 
 
